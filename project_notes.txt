@@ -1,0 +1,22 @@
+🧠 How This Maps to the PNG
+Input Sources
+File text → ingestion.py
+Metadata → ingestion.py
+------------------------------------------
+AI Processing
+Query analysis → processing.py
+Reasoning → agent_core.py
+Planning → processing.py
+Tool selection → agent_core.py
+Context management → agent_core.py
+-------------------------------------------
+Action Layer
+Task execution → tools.py
+Error handling → (future roadmap)
+Feedback loop → (future roadmap)
+Scheduling → (future roadmap)
+----------------------------------------
+Output
+Markdown summary → output.py
+-----------------------------------------
+This is a perfect miniature agent system.
