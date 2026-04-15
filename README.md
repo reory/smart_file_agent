@@ -35,7 +35,7 @@ This project is intentionally small and easy to understand.
 
 ---
 
-![](smart_file_agent/agent/screenshots/agentic_system.png)
+![Logic flow of the file sorting system](smart_file_agent/agent/screenshots/agentic_system.png)
 
 ---
 
