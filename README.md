@@ -159,8 +159,6 @@ This project demonstrates:
 
 - [ ] Add a tool registry
 
-- [ ] Add a local LLM mode (Ollama)
-
 - [ ] Add a FastAPI interface
 
 ---
