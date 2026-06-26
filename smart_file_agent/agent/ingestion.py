@@ -1,8 +1,10 @@
 from pathlib import Path
 import logging
+
 logger = logging.getLogger(__name__)
 
 # Handles file loading, metadata, logs.
+
 
 def load_file(path: str) -> str:
 
@@ -12,7 +14,9 @@ def load_file(path: str) -> str:
     text = file_path.read_text(encoding="utf-8")
     return text
 
+
 def extract_metadata(path: str) -> dict:
+    """Extract and return metadata from the file at the given path."""
 
     file_path = Path(path)
     return {
