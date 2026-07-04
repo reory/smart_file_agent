@@ -55,10 +55,19 @@ smart_file_agent/
 │   │   ├── processing.py
 │   │   ├── tools.py
 │   │   └── output.py
-│
+├──tests/
+│   ├── test_agent_core.py
+│   ├── test_ingestion.py
+│   ├── test_logging_config.py
+│   ├── test_main.py
+│   ├── test_processing.py
+│   ├── test_tools_hypothesis.py
+│   ├── test_tools.py
+│   ├── test_output.py
 ├── venv/
 ├── README.md
 └── project_notes.txt
+└── requirements.txt
 ```
 
 ---

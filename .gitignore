@@ -3,6 +3,8 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
+*.pytest_cache
+*.hypothesis
 
 # Virtual environment
 venv/
@@ -22,6 +24,7 @@ Thumbs.db
 # Local logs or temp files
 *.log
 *.tmp
+htmlcov
 
 
 
