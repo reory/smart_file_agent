@@ -1,6 +1,8 @@
 import tempfile
 from pathlib import Path
-from smart_file_agent.agent.ingestion import load_file, extract_metadata
+
+from smart_file_agent.agent.ingestion import extract_metadata, load_file
+
 
 def test_load_file_reads_contents():
     with tempfile.TemporaryDirectory() as tmp:

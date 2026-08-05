@@ -1,5 +1,8 @@
-from hypothesis import given, strategies as st
-from smart_file_agent.agent.tools import summarise_text, bulletify
+from hypothesis import given
+from hypothesis import strategies as st
+
+from smart_file_agent.agent.tools import bulletify, summarise_text
+
 
 @given(st.text())
 def test_summarise_never_crashes(text):

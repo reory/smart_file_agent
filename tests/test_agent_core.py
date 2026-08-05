@@ -1,6 +1,8 @@
 import tempfile
 from pathlib import Path
+
 from smart_file_agent.agent.agent_core import run_agent
+
 
 def test_run_agent_standard():
     with tempfile.TemporaryDirectory() as tmp:

@@ -1,5 +1,7 @@
 import logging
+
 from smart_file_agent.agent.logging_config import setup_logging
+
 
 def test_setup_logging_configures_root_logger():
     

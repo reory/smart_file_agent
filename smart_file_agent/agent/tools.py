@@ -1,7 +1,7 @@
 #  Implements the actual actions the agent can perform.
+import logging
 import re
 from collections import Counter
-import logging
 
 logger = logging.getLogger(__name__)
 

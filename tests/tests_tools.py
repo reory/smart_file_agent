@@ -1,4 +1,5 @@
-from smart_file_agent.agent.tools import summarise_text, bulletify
+from smart_file_agent.agent.tools import bulletify, summarise_text
+
 
 def test_summarise_text_basic():
     text = "Python is great. It is used everywhere."

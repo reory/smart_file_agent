@@ -1,5 +1,6 @@
 from smart_file_agent.agent.processing import analyse_request, plan_steps
 
+
 def test_analyse_request_standard():
     assert analyse_request("summarise this") == "standard_summary"
 

@@ -1,5 +1,6 @@
 import logging
 
+
 # Timestamps, log levels, clean formatting.
 def setup_logging():
     logging.basicConfig(

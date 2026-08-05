@@ -1,9 +1,10 @@
 # The “agentic brain.”
 
 import logging
-from .ingestion import load_file, extract_metadata
+
+from .ingestion import extract_metadata, load_file
 from .processing import analyse_request, plan_steps
-from .tools import summarise_text, bulletify
+from .tools import bulletify, summarise_text
 
 logger = logging.getLogger(__name__)
 

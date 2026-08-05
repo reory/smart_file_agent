@@ -1,9 +1,12 @@
 # Simple CLI entry point. (Command Line Interface)
 
+import logging
+
 from smart_file_agent.agent.agent_core import run_agent
 from smart_file_agent.agent.output import format_markdown
+
 from .agent.logging_config import setup_logging
-import logging
+
 logger = logging.getLogger(__name__)
 
 setup_logging()

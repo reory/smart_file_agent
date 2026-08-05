@@ -1,5 +1,6 @@
 from smart_file_agent.agent.output import format_markdown
 
+
 def test_format_markdown_outputs_expected_structure():
     output = {
         "metadata": {"name": "file.txt"},
