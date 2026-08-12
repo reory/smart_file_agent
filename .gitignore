@@ -5,6 +5,8 @@ __pycache__/
 *.pyd
 *.pytest_cache
 *.hypothesis
+.ruff_cache/
+.coverage/
 
 # Virtual environment
 venv/
@@ -28,3 +30,6 @@ htmlcov
 
 
 
+.coverage
+htmlcov/
+.pytest_cache/
