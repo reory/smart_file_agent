@@ -2,6 +2,11 @@ from smart_file_agent.agent.output import format_markdown
 
 
 def test_format_markdown_outputs_expected_structure():
+    """
+    Test that format_markdown generates 
+    expected headers, metadata, and summary content.
+    """
+    
     output = {
         "metadata": {"name": "file.txt"},
         "mode": "standard_summary",

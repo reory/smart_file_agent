@@ -18,16 +18,21 @@ def main():
     prompt = input("What would you like to do? ").strip()
     print()
     
-    output = run_agent(file_path, prompt)
-    md = format_markdown(output)
+    try:
+        output = run_agent(file_path, prompt)
+        md = format_markdown(output)
     
-    logger.info("Agent returned output successfully")
-    print("\n" + "="*60)
-    print("AGENT OUTPUT")
-    print("="*60 + "\n")
-    print(md)
-    print("\n" + "="*60 + "\n")
-   
+        logger.info("Agent returned output successfully")
+        print("\n" + "="*60)
+        print("AGENT OUTPUT")
+        print("="*60 + "\n")
+        print(md)
+        print("\n" + "="*60 + "\n")
+    
+    except FileNotFoundError as e:
+        print("\n❗ Operation cancelled.")
+        print(str(e))
+        print("Please try again with a valid file.\n")
 
 
 if __name__ == "__main__":

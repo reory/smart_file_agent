@@ -160,11 +160,13 @@ This project demonstrates:
 
 # 🛣️ Roadmap Features
 
-- [ ] Add a reasoning trace (“Thought → Action → Result”)
+- [x] Add a reasoning trace (“Thought → Action → Result”)
+
+- [x] Add timing to the "Agent"
+
+- [x] Provide fuzzy matching when adding files for the agent to read
 
 - [ ] Add a memory system
-
-- [ ] A reasoning trace (LLM‑style)
 
 - [ ] Add a tool registry
 

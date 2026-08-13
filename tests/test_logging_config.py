@@ -4,6 +4,10 @@ from smart_file_agent.agent.logging_config import setup_logging
 
 
 def test_setup_logging_configures_root_logger():
+    """
+    Test that setup_logging sets root log level to 
+    INFO and configures handler formatters.
+    """
     
     # Reset logging so basicConfig can apply
     for handler in logging.root.handlers[:]:

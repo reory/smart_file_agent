@@ -8,4 +8,13 @@ def format_markdown(output: dict) -> str:
     md += f"**Mode:** {output['mode']}\n\n"
     md += f"**Steps:** {', '.join(output['steps'])}\n\n"
     md += output["summary"]
+    md += "\n\n## Reasoning Trace\n"
+
+    for idx, entry in enumerate(output["trace"], start=1):
+        md += f"\n### Step {idx}\n"
+        md += f"**Thought:** {entry['thought']}\n\n"
+        md += f"**Action:** {entry['action']}\n\n"
+        md += f"**Duration:** {entry['duration_ms']} ms\n\n"
+        md += f"**Result:**\n{entry['result']}\n"
+
     return md
