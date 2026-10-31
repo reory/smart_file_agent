@@ -10,7 +10,19 @@
 
 ---
 
-# 🧠 Overview
+## 📑 Table of Contents
+
+| Section | Section |
+|----------|----------|
+| [Overview](#-overview) | [Running the Agent](#️-running-the-agent) |
+| [Screenshots](#-screenshots) | [Supported Prompts](#-supported-prompts) |
+| [Project Structure](#️-project-structure) | [Example Output](#-example-output) |
+| [How It Works](#-how-it-works-mapped-to-agentic-ai-architecture) | [Why This Project Exists](#-why-this-project-exists) |
+| [Roadmap Features](#️-roadmap-features) | [Notes](#-notes) |
+
+---
+
+## 🧠 Overview
 
 Smart File Agent is a tiny, self‑contained demonstration of an agentic 
 AI pipeline — built entirely in Python
@@ -28,18 +40,15 @@ It mirrors the architecture shown in the “How Agentic AI Works” diagram:
 This project is intentionally small and easy to understand.
 
 ---
-
-# 📸 Screenshots
+## 📸 Screenshots
 
 - Smart File Agent is a miniature implementation of the agentic‑AI pipeline shown below — it ingests a file, analyses the user’s request, plans the steps, executes tools, and produces a structured output exactly like the Input → Processing → Action → Output flow in the diagram.
-
----
 
 ![Logic flow of the file sorting system](smart_file_agent/agent/screenshots/agentic_system.png)
 
 ---
 
-# 🏗️ Project Structure
+## 🏗️ Project Structure
 ```
 smart_file_agent/
 │
@@ -54,7 +63,7 @@ smart_file_agent/
 │   │   ├── processing.py
 │   │   ├── tools.py
 │   │   └── output.py
-├──tests/
+├── tests/
 │   ├── test_agent_core.py
 │   ├── test_ingestion.py
 │   ├── test_logging_config.py
@@ -63,7 +72,7 @@ smart_file_agent/
 │   ├── test_tools_hypothesis.py
 │   ├── test_tools.py
 │   ├── test_output.py
-├── venv/
+|
 ├── README.md
 └── project_notes.txt
 └── requirements.txt
@@ -71,32 +80,32 @@ smart_file_agent/
 
 ---
 
-# 🧩 How It Works (Mapped to Agentic AI Architecture)
+## 🧩 How It Works (Mapped to Agentic AI Architecture)
 
-## Input Sources → ingestion.py
+### Input Sources → ingestion.py
 - Loads the file text
 - Extracts metadata (name, size, extension)
 
-## AI Processing → processing.py
+### AI Processing → processing.py
 - Analyses the user’s request
 - Chooses a mode (summary or bullet summary)
 - Plans the steps the agent should take
 
-## Action Layer → tools.py
+### Action Layer → tools.py
 - Implements two tiny rule‑based tools:
 - summarise_text() → extracts first sentence, longest sentence, keywords
 - bulletify() → converts sentences into bullet points
 
-## Agent Orchestration → agent_core.py
+### Agent Orchestration → agent_core.py
 - Runs the pipeline and executes each planned step in order
 - Produces a structured result dictionary
 
-## Output Layer → output.py
+### Output Layer → output.py
 - Formats the final Markdown summary
 
 ---
 
-# ▶️ Running the Agent
+## ▶️ Running the Agent
 From the project root:
 
 ```Bash
@@ -106,21 +115,21 @@ You’ll be prompted for:
 - File path
 - What you want the agent to do
 
-## Example:
+### Example:
 Enter file path: (**File path of any text document you have**)
 What would you like to do? **bulletify**
 
-## 💬 Supported Prompts
+### 💬 Supported Prompts
 You can speak to the agent naturally.
 Here are some example prompts:
 
-## Summaries
+### Summaries
 - summarise this
 - give me a summary
 - summarise the file
 - what is this file about
 
-## Bullet summaries
+### Bullet summaries
 - bulletify
 - give me bullet points
 - turn this into bullets
@@ -128,22 +137,24 @@ Here are some example prompts:
 
 The agent detects the intent and chooses the correct mode.
 
-## 🧪 Example Output
-
+### 🧪 Example Output
+```text
 - AGENT OUTPUT
 
-## Summary of project_notes.txt
-**Mode:** bullet_summary
-**Steps:** extract_text, summarise, bulletify
+Summary of project_notes.txt
 
-- Summary:
+Mode: bullet_summary
+Steps: extract_text, summarise, bulletify
+
+Summary:
 - Opening idea: ...
 - Key detail: ...
 - Keywords: ...
+```
 
 ---
 
-# 🎯 Why This Project Exists
+## 🎯 Why This Project Exists
 This project demonstrates:
 
 - how agentic systems work internally
@@ -158,7 +169,7 @@ This project demonstrates:
 
 ---
 
-# 🛣️ Roadmap Features
+## 🛣️ Roadmap Features
 
 - [x] Add a reasoning trace (“Thought → Action → Result”)
 
@@ -174,7 +185,7 @@ This project demonstrates:
 
 ---
 
-# 📝 Notes 
+## 📝 Learning Outcomes
 - It was enjoyable to build this. If you have any ideas on how to collaborate and 
 improve this project please let me know.
 
