@@ -1,5 +1,6 @@
 from hypothesis import given
 from hypothesis import strategies as st
+
 from smart_file_agent.agent.tools import bulletify, summarise_text
 
 

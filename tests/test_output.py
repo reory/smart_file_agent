@@ -11,7 +11,8 @@ def test_format_markdown_outputs_expected_structure():
         "metadata": {"name": "file.txt"},
         "mode": "standard_summary",
         "steps": ["extract_text", "summarise"],
-        "summary": "Summary:\n- Hello"
+        "summary": "Summary:\n- Hello",
+        "trace": [],
     }
 
     md = format_markdown(output)

@@ -2,10 +2,12 @@
 
 import logging
 import time
+from datetime import UTC, datetime
 
 from .ingestion import extract_metadata, load_file
+from .memory import MemoryState
 from .processing import analyse_request, plan_steps
-from .tools import bulletify, summarise_text
+from .tools import bulletify, extract_keywords, summarise_text
 
 logger = logging.getLogger(__name__)
 
@@ -21,6 +23,7 @@ def run_agent(file_path: str, user_prompt: str) -> dict:
     # Ingest
     text, actual_path = load_file(file_path)
     metadata = extract_metadata(actual_path)
+    memory = MemoryState()
     logger.info("File loaded successfully")
     
     # Reasoning
@@ -63,6 +66,13 @@ def run_agent(file_path: str, user_prompt: str) -> dict:
         })
 
         output = result
+
+    memory.remember(
+        file_path=str(actual_path),
+        summary=output,
+        keywords="".join(extract_keywords(text)),
+        processed_at=datetime.now(UTC).isoformat(),
+    )
 
     logger.info("Pipeline complete")
     

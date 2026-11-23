@@ -9,8 +9,10 @@ __pycache__/
 .coverage/
 
 # Virtual environment
+.venv/
 venv/
 .env/
+env/
 
 # IDE / editor files
 .vscode/
@@ -26,9 +28,14 @@ Thumbs.db
 # Local logs or temp files
 *.log
 *.tmp
+*.xml
 htmlcov
 
-
+# Personal notes
+*.txt
+notes/
+scratch/
+temp_script.py
 
 .coverage
 htmlcov/

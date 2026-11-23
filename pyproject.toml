@@ -1,0 +1,29 @@
+[project]
+name = "smart-file-agent"
+version = "0.1.0"
+description = "A tiny educational agentic AI pipeline built in pure Python."
+readme = "README.md"
+requires-python = ">=3.12"
+
+dependencies = [
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "pytest-cov>=6",
+    "hypothesis>=6",
+]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = [
+    "--cov=smart_file_agent",
+    "--cov-report=term-missing",
+    "--cov-report=html",
+    "-ra",
+]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]

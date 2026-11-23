@@ -4,7 +4,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 def analyse_request(user_prompt: str) -> str:
-    """Analyze a user prompt to determine the summary mode."""
+    """Analyse a user prompt to determine the summary mode."""
 
     logger.info(f"Analysing user request: {user_prompt}")
 

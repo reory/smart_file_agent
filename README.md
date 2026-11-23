@@ -1,194 +1,361 @@
 # 🗄️ Smart File Agent
-
-- A tiny, educational demonstration of an agentic AI pipeline — no LLMs, no APIs, just pure Python.
-
 ![Last Commit](https://img.shields.io/github/last-commit/reory/smart_file_agent?cacheSeconds=60)
 ![Repo Size](https://img.shields.io/github/repo-size/reory/smart_file_agent?cacheSeconds=60)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.12-blue)
+
+A tiny, educational demonstration of an agentic AI pipeline built entirely in Python.
+No LLMs. No APIs. No cloud services.
+Just a simple, transparent implementation of how agent-style systems work under the hood.
 
 ---
 
 ## 📑 Table of Contents
 
-| Section | Section |
-|----------|----------|
-| [Overview](#-overview) | [Running the Agent](#️-running-the-agent) |
-| [Screenshots](#-screenshots) | [Supported Prompts](#-supported-prompts) |
-| [Project Structure](#️-project-structure) | [Example Output](#-example-output) |
-| [How It Works](#-how-it-works-mapped-to-agentic-ai-architecture) | [Why This Project Exists](#-why-this-project-exists) |
-| [Roadmap Features](#️-roadmap-features) | [Notes](#-notes) |
+- [Why Was This Built](#-why-was-this-built)
+- [Design Philosophy](#-design-philosophy)
+- [Agent Pipeline](#-agent-pipeline)
+- [Screenshots](#-screenshots)
+- [Project Structure](#-project-structure)
+- [Installation](#-installation)
+- [Running the Agent](#️-running-the-agent)
+- [Supported Prompts](#-supported-prompts)
+- [How It Works](#-how-it-works)
+- [Example Output](#-example-output)
+- [Testing](#-testing)
+- [Why This Project Exists](#-why-this-project-exists)
+- [Roadmap Features](#️-roadmap-features)
+
 
 ---
 
-## 🧠 Overview
+## 🧠 Why Was This Built
 
-Smart File Agent is a tiny, self‑contained demonstration of an agentic 
-AI pipeline — built entirely in Python
+Smart File Agent is a miniature implementation of an agentic AI workflow.
 
-It mirrors the architecture shown in the “How Agentic AI Works” diagram:
+The project demonstrates how modern AI systems are commonly structured:
 
-- Input Sources → file ingestion
+- Input ingestion
+- Request analysis
+- Planning
+- Tool execution
+- Output generation
 
-- AI Processing → request analysis + planning
-
-- Action Layer → tool execution (summarise, bulletify)
-
-- Output → clean Markdown summary
-
-This project is intentionally small and easy to understand.
+Unlike production AI systems, Smart File Agent intentionally avoids external AI APIs and large frameworks. The focus is on understanding the architecture rather than hiding the logic behind a model.
 
 ---
+
+## 🎯 Design Philosophy
+
+Many AI tutorials jump directly to calling a model API.
+
+This project takes the opposite approach.
+
+The goal is to demonstrate:
+
+- How an agent receives information
+- How requests are analysed
+- How plans are created
+- How tools are selected
+- How outputs are generated
+
+Everything is intentionally small, readable, and educational.
+
+The system uses simple rule-based reasoning rather than a large language model.
+
+---
+
+## 🔄 Agent Pipeline
+
+The Smart File Agent follows a straightforward processing workflow:
+
+```text
+File
+  │
+  ▼
+Ingestion
+  │
+  ▼
+Request Analysis
+  │
+  ▼
+Planning
+  │
+  ▼
+Tool Execution
+  │
+  ▼
+Structured Output
+```
+
+Current processing modes:
+
+- Standard summary
+- Bullet-point summary
+
+---
+
 ## 📸 Screenshots
 
-- Smart File Agent is a miniature implementation of the agentic‑AI pipeline shown below — it ingests a file, analyses the user’s request, plans the steps, executes tools, and produces a structured output exactly like the Input → Processing → Action → Output flow in the diagram.
+The diagram below illustrates the architecture used by the project.
 
-![Logic flow of the file sorting system](smart_file_agent/agent/screenshots/agentic_system.png)
+![Logic flow of the Smart File Agent](smart_file_agent/agent/screenshots/agentic_system.png)
 
 ---
 
-## 🏗️ Project Structure
-```
+## 📁 Project Structure
+
+```text
 smart_file_agent/
-│
 ├── smart_file_agent/
 │   ├── __init__.py
 │   ├── main.py
-│   ├── agent/
-│   │   ├── __init__.py
-│   │   ├── agent_core.py
-|   |   ├── logging_config.py
-│   │   ├── ingestion.py
-│   │   ├── processing.py
-│   │   ├── tools.py
-│   │   └── output.py
+│   └── agent/
+│       ├── __init__.py
+│       ├── agent_core.py
+│       ├── ingestion.py
+│       ├── logging_config.py
+│       ├── output.py
+│       ├── processing.py
+│       └── tools.py
+│
 ├── tests/
 │   ├── test_agent_core.py
 │   ├── test_ingestion.py
 │   ├── test_logging_config.py
 │   ├── test_main.py
-│   ├── test_processing.py
-│   ├── test_tools_hypothesis.py
-│   ├── test_tools.py
 │   ├── test_output.py
-|
-├── README.md
-└── project_notes.txt
-└── requirements.txt
+│   ├── test_processing.py
+│   ├── test_tools.py
+│   └── test_tools_hypothesis.py
+│
+├── CONTRIBUTING.md
+├── LICENSE.md
+├── pyproject.toml
+└── README.md
 ```
 
 ---
 
-## 🧩 How It Works (Mapped to Agentic AI Architecture)
+## 📦 Installation
 
-### Input Sources → ingestion.py
-- Loads the file text
-- Extracts metadata (name, size, extension)
+This project uses **uv** for dependency management.
 
-### AI Processing → processing.py
-- Analyses the user’s request
-- Chooses a mode (summary or bullet summary)
-- Plans the steps the agent should take
+Install dependencies:
 
-### Action Layer → tools.py
-- Implements two tiny rule‑based tools:
-- summarise_text() → extracts first sentence, longest sentence, keywords
-- bulletify() → converts sentences into bullet points
-
-### Agent Orchestration → agent_core.py
-- Runs the pipeline and executes each planned step in order
-- Produces a structured result dictionary
-
-### Output Layer → output.py
-- Formats the final Markdown summary
+```bash
+uv sync
+```
 
 ---
 
 ## ▶️ Running the Agent
+
 From the project root:
 
-```Bash
-python -m smart_file_agent.main
+```bash
+uv run python -m smart_file_agent.main
 ```
-You’ll be prompted for:
-- File path
-- What you want the agent to do
 
-### Example:
-Enter file path: (**File path of any text document you have**)
-What would you like to do? **bulletify**
+You will be prompted for:
 
-### 💬 Supported Prompts
-You can speak to the agent naturally.
-Here are some example prompts:
-
-### Summaries
-- summarise this
-- give me a summary
-- summarise the file
-- what is this file about
-
-### Bullet summaries
-- bulletify
-- give me bullet points
-- turn this into bullets
-- bullet summary please
-
-The agent detects the intent and chooses the correct mode.
-
-### 🧪 Example Output
 ```text
-- AGENT OUTPUT
+Enter file path:
+```
 
-Summary of project_notes.txt
+and
 
-Mode: bullet_summary
-Steps: extract_text, summarise, bulletify
+```text
+What would you like to do?
+```
 
-Summary:
-- Opening idea: ...
-- Key detail: ...
-- Keywords: ...
+Example:
+
+```text
+Enter file path: notes.txt
+What would you like to do? bulletify
 ```
 
 ---
 
-## 🎯 Why This Project Exists
-This project demonstrates:
+## 💬 Supported Prompts
 
-- how agentic systems work internally
+The agent currently supports natural-language requests such as:
 
-- how to build a reasoning → planning → action pipeline
+### Summaries
 
-- how to structure a Python agent project
+```text
+summarise this
+```
 
-- how to simulate LLM behaviour without external dependencies
+```text
+give me a summary
+```
 
-- It’s intentionally tiny, readable, and educational.
+```text
+summarise the file
+```
+
+```text
+what is this file about
+```
+
+### Bullet Summaries
+
+```text
+bulletify
+```
+
+```text
+give me bullet points
+```
+
+```text
+turn this into bullets
+```
+
+```text
+bullet summary please
+```
+
+The request analyser determines which execution mode should be used.
+
+---
+
+## ⚙️ How It Works
+
+### 📥 Ingestion Layer
+
+**ingestion.py**
+
+Responsibilities:
+
+- Load files
+- Extract metadata
+- Provide fuzzy filename matching
+- Handle file-related errors
+
+---
+
+### 🧠 Processing Layer
+
+**processing.py**
+
+Responsibilities:
+
+- Analyse user intention
+- Determine operating mode
+- Build execution plans
+
+---
+
+### 🛠️ Tool Layer
+
+**tools.py**
+
+Current tools:
+
+- `summarise_text()`
+- `bulletify()`
+
+These tools perform the actual transformations on the input content.
+
+---
+
+### 🤖 Agent Core
+
+**agent_core.py**
+
+Responsibilities:
+
+- Execute the processing pipeline
+- Track reasoning steps
+- Execute tools
+- Record timing information
+- Build trace output
+
+---
+
+### 📝 Output Layer
+
+**output.py**
+
+Responsibilities:
+
+- Format agent results
+- Generate markdown output
+- Present reasoning traces
+
+---
+
+## 🧾 Example Output
+
+```text
+============================================================
+
+AGENT OUTPUT
+
+============================================================
+
+Summary of project_notes.txt
+
+Mode: bullet_summary
+
+Steps: extract_text, summarise, bulletify
+
+- Opening idea: ...
+- Key detail: ...
+- Keywords: ...
+
+============================================================
+```
+
+---
+
+## 🧪 Testing
+
+Run the full test suite:
+
+```bash
+uv run pytest
+```
+
+Run test coverage:
+
+```bash
+uv run pytest --cov
+```
+
+The project includes:
+
+- pytest
+- pytest-cov
+- hypothesis
+
+Example coverage run:
+
+```bash
+uv run pytest --cov=smart_file_agent
+```
 
 ---
 
 ## 🛣️ Roadmap Features
 
-- [x] Add a reasoning trace (“Thought → Action → Result”)
-
-- [x] Add timing to the "Agent"
-
-- [x] Provide fuzzy matching when adding files for the agent to read
-
-- [ ] Add a memory system
-
-- [ ] Add a tool registry
-
-- [ ] Add a FastAPI interface
-
----
-
-## 📝 Learning Outcomes
-- It was enjoyable to build this. If you have any ideas on how to collaborate and 
-improve this project please let me know.
+- [x] Agent orchestration pipeline
+- [x] Reasoning traces
+- [x] Timing metrics
+- [x] Fuzzy file matching
+- [x] Structured markdown output
+- [x] Property-based testing with Hypothesis
+- [x] Memory system
+- [ ] Tool registry
+- [ ] FastAPI interface
+- [ ] Additional text-processing tools
+- [ ] Export formats beyond Markdown
 
 ---
 
-* **Built by Roy Peters** 😁[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/roy-p-74980b382/)
+Built by **Roy Peters** 😁
+

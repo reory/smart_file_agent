@@ -13,6 +13,8 @@ setup_logging()
 
 
 def main():
+    """Process a file using the agent and display the results."""
+
     logger.info("CLI started")
     file_path = input("Enter file path: ").strip()
     prompt = input("What would you like to do? ").strip()

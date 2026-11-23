@@ -1,40 +1,226 @@
 # Contributing to Smart File Agent
 
-Thanks for your interest in contributing! This project is intentionally small and educational, designed to demonstrate how an agentic AI pipeline works under the hood. Contributions that improve clarity, structure, or learning value are always welcome.
+Thank you for your interest in contributing to Smart File Agent.
 
-## How to Contribute
+Smart File Agent is a deliberately small, educational project that demonstrates how an agentic AI pipeline works using pure Python. The goal is to show the mechanics behind ingestion, reasoning, planning, tool execution, and output generation without relying on external AI services or large frameworks.
 
-### 1. Fork the Repository
-Create your own fork of the project and clone it locally.
+Contributions that improve clarity, maintainability, testing, documentation, or learning value are always welcome.
 
-### 2. Create a Feature Branch
-Use a clear, descriptive branch name:
-git checkout -b feature/add-new-tool
+---
 
-### 3. Make Your Changes
-Keep contributions small and focused. Examples of great contributions:
-- Improving documentation or examples
-- Adding small, self‑contained tools (e.g., a new text transformation)
-- Enhancing readability or structure
-- Adding optional features that don’t increase complexity
+## Project Philosophy
 
-### 4. Run the Project
-From the project root:
-python -m smart_file_agent.main
+This project is designed to help developers understand how agent-style systems operate internally.
 
+The pipeline consists of:
 
-### 5. Submit a Pull Request
-Open a PR with:
-- A clear description of what you changed
-- Why the change improves the project
-- Any notes for reviewers
+1. File Ingestion
+2. Request Analysis
+3. Planning
+4. Tool Execution
+5. Output Generation
 
-## Code Style
-- Follow Python’s PEP8 style guide
-- Keep functions small and readable
-- Avoid adding external dependencies unless essential
+The emphasis is on readability and education rather than complexity.
 
-## Questions or Ideas
-Feel free to open an issue if you have suggestions or want to discuss a potential improvement.
+When contributing, please favor:
 
-Thanks for helping make Smart File Agent better!
+- Simple solutions
+- Clear code
+- Strong documentation
+- Good test coverage
+- Small, focused changes
+
+---
+
+## Development Setup
+
+This project uses **uv** for dependency management.
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/reory/smart_file_agent.git
+cd smart_file_agent
+```
+
+### Synchronise Dependencies
+
+```bash
+uv sync
+```
+
+---
+
+## Running the Application
+
+Start the Smart File Agent from the project root:
+
+```bash
+uv run python -m smart_file_agent.main
+```
+
+The application will prompt for:
+
+- A file path
+- A user request
+
+Example requests:
+
+```text
+summarise this
+```
+
+```text
+give me a summary
+```
+
+```text
+bulletify
+```
+
+```text
+turn this into bullet points
+```
+
+---
+
+## Running Tests
+
+Run the full test suite:
+
+```bash
+uv run pytest
+```
+
+Run tests with coverage:
+
+```bash
+uv run pytest --cov
+```
+
+The project currently uses:
+
+- pytest
+- pytest-cov
+- hypothesis
+
+All tests should pass before submitting a pull request.
+
+---
+
+## Code Style Guidelines
+
+Please follow standard Python conventions:
+
+- Follow PEP 8
+- Keep functions small and focused
+- Prefer readability over cleverness
+- Use descriptive names
+- Add tests for new functionality
+- Add docstrings where appropriate
+
+Example:
+
+```python
+def analyse_request(prompt: str) -> str:
+    """Determine the processing mode from a user request."""
+```
+
+---
+
+## Good Contributions
+
+Examples of contributions that fit this project well:
+
+✅ Documentation improvements
+
+✅ Additional tests
+
+✅ Better error handling
+
+✅ Small self-contained tools
+
+✅ Refactoring that improves readability
+
+✅ Educational examples
+
+✅ Improved logging or diagnostics
+
+✅ Performance improvements that do not reduce readability
+
+---
+
+## Contributions to Avoid
+
+This repository is intentionally lightweight and educational.
+
+Please avoid introducing:
+
+❌ Large frameworks
+
+❌ Unnecessary dependencies
+
+❌ Complex abstractions
+
+❌ Features that obscure how the agent works
+
+❌ AI API integrations that replace the learning experience
+
+❌ Changes that significantly increase maintenance burden
+
+If a feature makes the project substantially harder to understand, it is probably not a good fit.
+
+---
+
+## Pull Requests
+
+Before opening a pull request:
+
+- Ensure all tests pass
+- Add tests for any new functionality
+- Update documentation if necessary
+- Keep changes focused on a single goal
+- Remove unused code and debug statements
+
+A good pull request should explain:
+
+1. What changed
+2. Why the change was made
+3. How the change was tested
+
+---
+
+## Reporting Issues
+
+If you discover a bug or have an improvement suggestion:
+
+1. Search existing issues first
+2. Create a new issue if necessary
+3. Provide steps to reproduce the problem
+4. Include expected and actual behaviour
+
+Clear issue reports help maintain the project efficiently.
+
+---
+
+## Feature Ideas
+
+Ideas for future improvements include:
+
+- Memory systems
+- Tool registries
+- Additional text-processing tools
+- FastAPI interfaces
+- Extended output formats
+
+Please open an issue before starting major feature work so the design can be discussed first.
+
+---
+
+## License
+
+By contributing to this project, you agree that your contributions will be released under the project's MIT License.
+
+---
+
+Built by Roy Peters 😁
