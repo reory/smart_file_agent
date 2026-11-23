@@ -3,6 +3,7 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+
 def analyse_request(user_prompt: str) -> str:
     """Analyse a user prompt to determine the summary mode."""
 
@@ -11,6 +12,7 @@ def analyse_request(user_prompt: str) -> str:
     if "bullet" in user_prompt.lower():
         return "bullet_summary"
     return "standard_summary"
+
 
 def plan_steps(mode: str) -> list:
     """Determine the list of execution steps for a given summary mode."""

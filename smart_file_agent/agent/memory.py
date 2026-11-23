@@ -10,6 +10,8 @@ class MemoryState:
 
 
     def create_tables(self):
+        """Create the memory database schema."""
+
         self.conn.execute("""
             CREATE VIRTUAL TABLE IF NOT EXISTS memory
             USING fts5(
@@ -27,6 +29,7 @@ class MemoryState:
         summary: str, keywords: str, 
         processed_at: str
     ) -> None:
+        """Store a document in memory."""
 
         self.conn.execute(
             """
@@ -51,6 +54,7 @@ class MemoryState:
 
 
     def search(self, query: str):
+        """Search memory using FTS5."""
 
         return self.conn.execute(
             """
