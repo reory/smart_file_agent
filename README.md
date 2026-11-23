@@ -35,11 +35,12 @@ Smart File Agent is a miniature implementation of an agentic AI workflow.
 
 The project demonstrates how modern AI systems are commonly structured:
 
-- Input ingestion
-- Request analysis
-- Planning
-- Tool execution
-- Output generation
+- File ingestion
+- Analyse Request 
+- Execute Tools
+- Persistent Memory
+- Track Reasoning
+- Markdown Output
 
 Unlike production AI systems, Smart File Agent intentionally avoids external AI APIs and large frameworks. The focus is on understanding the architecture rather than hiding the logic behind a model.
 
@@ -97,7 +98,7 @@ Current processing modes:
 
 ## 📸 Screenshots
 
-The diagram below illustrates the architecture used by the project.
+Smart File Agent v2 architecture showing the complete processing pipeline from file ingestion and request analysis through tool execution, memory persistence, reasoning traces, and structured output.
 
 ![Logic flow of the Smart File Agent](smart_file_agent/agent/screenshots/agentic_system.png)
 
