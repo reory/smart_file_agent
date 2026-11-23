@@ -24,7 +24,6 @@ Just a simple, transparent implementation of how agent-style systems work under 
 - [How It Works](#-how-it-works)
 - [Example Output](#-example-output)
 - [Testing](#-testing)
-- [Why This Project Exists](#-why-this-project-exists)
 - [Roadmap Features](#️-roadmap-features)
 
 
