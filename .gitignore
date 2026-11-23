@@ -40,3 +40,8 @@ temp_script.py
 .coverage
 htmlcov/
 .pytest_cache/
+
+# SQLite databases
+*.db
+*.sqlite
+*.sqlite3
