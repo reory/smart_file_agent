@@ -357,4 +357,5 @@ uv run pytest --cov=smart_file_agent
 ---
 
 Built by **Roy Peters** 😁
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Roy%20Peters-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/roy-p-74980b382/)
 
